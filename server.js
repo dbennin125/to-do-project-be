@@ -58,7 +58,7 @@ app.post('/api/todos', async(req, res) => {
 });
 //update to item completed
 app.put('/api/todos/:id', async(req, res) => {
-  //will display only the specific user's data, all other data will not be shown.
+  //will display only the specific user's data and will only update, other's data cannot be seen.
   const data = await client.query(`update todos 
   set is_completed=true
   where id=$1 and owner_id=$2
