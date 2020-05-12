@@ -41,7 +41,7 @@ app.use('/auth', authRoutes);
 //all other routes should require the /api login
 app.use('/api', ensureAuth);
 
-app.get('api/todos', async(req, res) => {
+app.get('/api/todos', async(req, res) => {
   const data = await client.query('SELECT * from todos where owner_id=$1', [req.userId]);
   
   res.json(data.rows);
