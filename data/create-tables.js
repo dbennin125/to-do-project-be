@@ -20,6 +20,7 @@ async function run() {
                     id SERIAL PRIMARY KEY NOT NULL,
                     item VARCHAR(512) NOT NULL,
                     importance INTEGER NOT NULL,
+                    is_completed BOOLEAN DEFAULT FALSE,
                     owner_id INTEGER NOT NULL REFERENCES users(id)
             );
         `);
