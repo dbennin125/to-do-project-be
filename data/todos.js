@@ -1,14 +1,14 @@
 module.exports = [
   {
-    item: 'walk dog',
+    task: 'walk dog',
     importance: 10,
   },
   {
-    item: 'shopping',
+    task: 'shopping',
     importance: 4,
   },
   {
-    item: 'get booze',
+    task: 'get booze',
     importance: 6,
   }
 ];

@@ -12,16 +12,16 @@ async function run() {
     // run a query to create tables
     await client.query(`
                 CREATE TABLE users (
-                    id SERIAL PRIMARY KEY,
+                    id SERIAL PRIMARY KEY NOT NULL,
                     email VARCHAR(256) NOT NULL,
                     hash VARCHAR(512) NOT NULL
                 );           
                 CREATE TABLE todos (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    item VARCHAR(512) NOT NULL,
+                    task VARCHAR(512) NOT NULL,
                     importance INTEGER NOT NULL,
-                    is_completed BOOLEAN DEFAULT FALSE,
-                    owner_id INTEGER NOT NULL REFERENCES users(id)
+                    is_completed BOOLEAN DEFAULT false,
+                    user_id INTEGER NOT NULL REFERENCES users(id)
             );
         `);
 
